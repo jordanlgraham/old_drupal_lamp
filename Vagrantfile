@@ -31,12 +31,12 @@ Vagrant.configure("2") do |config|
     #server.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
     server.vm.provider "vmware_fusion" do |v|
-      v.vmx["memsize"]  = "1024"
+      v.vmx["memsize"]  = "2048"
     end
 
     server.vm.provider :virtualbox do |v|
       v.name = "drupal"
-      v.customize ["modifyvm", :id, "--memory", "1024"]
+      v.customize ["modifyvm", :id, "--memory", "2048"]
     end
 
     server.vm.network :private_network, ip: "192.168.50.5"
